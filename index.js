@@ -1,3 +1,6 @@
+// import { truthQuestions } from "./data/truth.js";
+// import { dareQuestions } from "./data/dare.js";
+
 // PAGES
 
 const home = document.getElementById("homepage");
@@ -7,7 +10,7 @@ const playerList = document.getElementById("playerPage");
 const gamePage = document.getElementById("gameplay");
 const endPage = document.getElementById("endgame");
 
-// BUTTONS 
+// BUTTONS
 
 const startBtn = document.getElementById("start-btn");
 const addBtn = document.getElementById("add-btn");
@@ -26,62 +29,8 @@ const input = document.getElementById("player-input");
 // LIST
 const listPlayers = [];
 
+// FUNCTIONS
 
-
-// FUNCTIONS 
-
-// PLAYER LIST SETUP
-
-const resetList = () => (list.innerHTML = ""); // empty the list
-const setNoPlayer = () => (list.innerHTML = "<li>No player</li>");
-
-function deletePlayer(evt) {
-    const clickedBtn = evt.target; // this is the clicked button
-    const parent = clickedBtn.parentElement; // let's access the li (the parent of clickedButton)
-    const text = parent.querySelector(".text").textContent; // get the todo text in the span
-    const indexPlayer = listPlayers.indexOf(text);
-  
-    listPlayers.splice(indexPlayer, 1);
-  
-    if (listPlayers.length === 0) setNoPlayer();
-    parent.remove();
-  }
-
-  function addPlayer() {
-    const playerString = input.value; // access the current input value
-  
-    if (playerString === "") return alert("Insert a player name");
-  
-    if (listPlayers.indexOf(playerString) !== -1) return alert("Name already entered");
-  
-    // no name ? let's remove the initial <li>No player...</li>
-    if (listPlayers.length === 0) resetList();
-  
-    // modify the list HTML with a new li
-    const li = document.createElement("li");
-    // use the input value as text content for the new li +
-  
-    listPlayers.push(playerString); // insert the current todo in the state
-  
-    li.innerHTML = `
-    <span class="text">${playerString}</span>
-    <button class="btn">delete</button>`;
-  
-    // create a clickable button :)
-    const btn = li.querySelector(".btn");
-    btn.addEventListener("click", deletePlayer);
-  
-    list.appendChild(li); // insert the li in the document
-    input.value = "";
-    input.focus();
-  }
-
-  addBtn.addEventListener("click", addPlayer);
-  window.onkeydown = (evt) => {
-    // console.log(evt.keyCode);
-    if (evt.keyCode === 13) addPlayer(); // only if user press the "enter" key
-    // 13 is a convention in the DOM API => represents the enter key (each key has an associated number)
-  };
 // SHOW AND HIDE
 
 // function show() {
@@ -112,18 +61,145 @@ function deletePlayer(evt) {
 //     };
 // }
 
+// BUTTONS EVENTS
+
+startBtn.addEventListener(
+  "click",
+  function () {
+    home.hidden = true;
+    playerList.hidden = false;
+  }, false
+);
+
+enterBtn.addEventListener("click", function () {
+  if (listPlayers.length === 0) {
+    gamePage.hidden = true;
+    playerList.hidden = false;
+  return alert("Insert a player name")
+}
+  else {
+    playerList.hidden = true;
+    gamePage.hidden = false;
+  }
+}, false
+);
+
+truthBtn.addEventListener("click", function () {
+  gamePage.hidden = false;
+  playerList.hidden = true;
+  home.hidden = true;
+  dareBtn.hidden = true;
+  truthBtn.hidden = true;
+}, false
+);
+
+dareBtn.addEventListener("click", function () {
+  gamePage.hidden = false;
+  playerList.hidden = true;
+  home.hidden = true;
+  dareBtn.hidden = true;
+  truthBtn.hidden = true;
+}, false
+);
+
+nextBtn.addEventListener("click", function () {
+  gamePage.hidden = false;
+  playerList.hidden = true;
+  home.hidden = true;
+  dareBtn.hidden = false;
+  truthBtn.hidden = false;
+}, false
+);
+
+endBtn.addEventListener("click", function() {
+    endPage.hidden = false;
+    home.hidden = true;
+    gamePage.hidden = true;
+    playerList.hidden = true;
+}, false
+);
+
+restartBtn.addEventListener("click", function() {
+  home.hidden = true;
+  gamePage.hidden = true;
+  playerList.hidden = false;
+}, false
+);
 
 
 
+// DISPLAY QUESTIONS
 
+// function displayQ () {
+//     truthBtn.onclick = function() {
+
+// }
+//     }
+// }
+
+// PLAYER LIST SETUP
+
+const resetList = () => (list.innerHTML = ""); // empty the list
+const setNoPlayer = () => (list.innerHTML = "<li>No player</li>");
+
+function deletePlayer(evt) {
+  const clickedBtn = evt.target; // this is the clicked button
+  const parent = clickedBtn.parentElement; // let's access the li (the parent of clickedButton)
+  const text = parent.querySelector(".text").textContent; // get the todo text in the span
+  const indexPlayer = listPlayers.indexOf(text);
+
+  listPlayers.splice(indexPlayer, 1);
+
+  if (listPlayers.length === 0) setNoPlayer();
+  parent.remove();
+}
+
+function addPlayer() {
+  const playerString = input.value; // access the current input value
+
+  if (playerString === "") return alert("Insert a player name");
+
+  if (listPlayers.indexOf(playerString) !== -1)
+    return alert("Name already entered");
+
+  // no name ? let's remove the initial <li>No player...</li>
+  if (listPlayers.length === 0) resetList();
+
+  // modify the list HTML with a new li
+  const li = document.createElement("li");
+  // use the input value as text content for the new li +
+
+  listPlayers.push(playerString); // insert the current todo in the state
+
+  li.innerHTML = `
+    <span class="text">${playerString}</span>
+    <button class="btn">delete</button>`;
+
+  // create a clickable button :)
+  const btn = li.querySelector(".btn");
+  btn.addEventListener("click", deletePlayer);
+
+  list.appendChild(li); // insert the li in the document
+  input.value = "";
+  input.focus();
+}
+
+addBtn.addEventListener("click", addPlayer);
+window.onkeydown = (evt) => {
+  // console.log(evt.keyCode);
+  if (evt.keyCode === 13) addPlayer(); // only if user press the "enter" key
+  // 13 is a convention in the DOM API => represents the enter key (each key has an associated number)
+};
 
 // ================
 // - EVENTS
 // ================
 
+// truthBtn.addEventListener('click', displayQ);
+// dareBtn.addEventListener('click', displayQ);
+
 // button.addEventListener('click', () => {
 //     checkButton();
 // });
-
 
 // btn.addEventListener("click", "got to next page");
