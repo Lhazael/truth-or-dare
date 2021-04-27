@@ -8,44 +8,73 @@
     <link rel="stylesheet" href="style.css" />
     <script type="module" src="index.js"></script>
   </head>
+
+   <!-- HEADER -->
+
   <header>
     <div class="site-name">
       <h2>the infamous game</h2>
     </div>
+
+    <!-- NAV BAR --> 
+
     <nav class="nav-bar">
       <ul>
-        <li><a href="#"> Home </a></li>
-        <li><a href="#"> How to Play</a></li>
-        <li><a href="#"> About </a></li>
+        <li><a id="homelink" href="#"> Home </a></li>
+        <li><a id="h2plink" href="#"> How to Play</a></li>
+        <li><a id="aboutlink" href="#"> About </a></li>
       </ul>
     </nav>
   </header>
   <body>
+
+    <!-- HOMEPAGE -->
+
     <section id="homepage" class="home-main">
       <div class="title">TRUTH OR DARE</div>
       <button id="start-btn">START</button>
     </section>
+
+    <!-- ABOUT PAGE --> 
+    
     <section id="aboutPage" class="about hidden">
     </section>
+
+    <!-- HOW2PLAY PAGE --> 
+
     <section id="how2play" class="how2play-main hidden">
       <h2></h2>
       <p></p>
     </section>
+
+    <!-- PLAYER PAGE --> 
+
     <section id="playerPage" class="player-main hidden">
       <h2>Enter player's name</h2>
       <input type="text" id="player-input" placeholder="Add a name" />
       <button id="add-btn">Add</button>
-      <p>Modify previous code to add a delete button on each todo !</p>
+      <!-- <p>Modify previous code to add a delete button on each todo !</p> -->
       <ul id="player-list">
-        <li>No players</li>
+        <li>No player</li>
       </ul>
+      <button id="enter-btn">Enter Game</button>
     </section>
+
+    <!-- GAME PAGE --> 
+
     <section id="gameplay" class="game-main hidden">
         <button id="truth-btn">Truth</button>
         <p></p>
         <button id="dare-btn">Dare</button>
         <p></p>
         <button id="next-btn">Next</button>
+    </section>
+
+    <!-- ENDGAME PAGE --> 
+
+    <section id="endgame" class="end-main hidden">
+        <button id="end-btn">End Game</button>
+        <button id="restart-btn">Restart Game</button>
     </section>
   </body>
   <!-- <footer> -->

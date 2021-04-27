@@ -49,9 +49,6 @@ header .nav-bar {
   list-style-type: none;
   margin: 0;
   padding: 0;
-}
-
-li {
   float: right;
 }
 
@@ -63,13 +60,13 @@ li a {
   color: black;
 }
 
-#start-button {
+#start-btn {
     border-style: 3px solid;
     text-align: center;
     margin: 10px;
     padding: 10px;
 }
-
+/* 
 footer {
   display: flex;
   text-align: center;
@@ -81,4 +78,4 @@ footer .copyright {
   float: center;
   flex: auto;
   margin: 3rem;
-}
+} */
