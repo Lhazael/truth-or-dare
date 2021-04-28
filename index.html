@@ -7,6 +7,8 @@
     <title>I Dare You to Tell the Truth</title>
     <link rel="stylesheet" href="style.css" />
     <script type="module" src="index.js"></script>
+    <script type="module" src="./data/dare.js"></script>
+    <script type="module" src="./data/truth.js"></script>
   </head>
 
    <!-- HEADER -->
@@ -64,11 +66,14 @@
 
     <section id="gameplay" hidden>
         <button id="truth-btn">Truth</button>
-        <p></p>
+        
         <button id="dare-btn">Dare</button>
-        <p></p>
+        
         <button id="next-btn">Next</button>
-        <p></p>
+        <div id="question-zone">
+          <h3></h3>
+          <p></p>
+        </div>
         <button id="end-btn">End Game</button>
         <button id="restart-btn">Restart Game</button>
     </section>
@@ -76,7 +81,7 @@
     <!-- ENDGAME PAGE --> 
 
     <section id="endgame" hidden>
-        <p></p>
+        <p>GAME IS OVER!</p>
     </section>
   </body>
   <!-- <footer> -->

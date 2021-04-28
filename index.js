@@ -1,5 +1,5 @@
-// import { truthQuestions } from "./data/truth.js";
-// import { dareQuestions } from "./data/dare.js";
+import { truthQuestions } from './data/truth.js';
+import { dareQuestions } from "./data/dare.js";
 
 // PAGES
 
@@ -26,40 +26,14 @@ const restartBtn = document.getElementById("restart-btn");
 const list = document.getElementById("player-list");
 const input = document.getElementById("player-input");
 
-// LIST
+// GAME VARIABLES
 const listPlayers = [];
+let truthStep = 0;
+let dareStep = 0;
 
-// FUNCTIONS
+const playerName = document.querySelector("#question-zone h3");
+const questionArea = document.querySelector("#question-zone p");
 
-// SHOW AND HIDE
-
-// function show() {
-//     section.classList.remove("hidden");
-// };
-
-// function hide(section1, section2, section3, section4, section5) {
-//     section1.classList.add("hidden");
-//     section2.classList.add("hidden");
-//     section3.classList.add("hidden");
-//     section4.classList.add("hidden");
-//     section5.classList.add("hidden");
-// };
-
-// window.onload = () => {
-
-//     document.getElementById("homelink").onclick = function () {
-//         show(home);
-//         hide(h2pPage, aboutPage, playerList, gamePage, endPage);
-//     };
-//     document.getElementById("h2plink").onclick = function () {
-//         show(h2pPage);
-//         hide(home, aboutPage, playerList, gamePage, endPage);
-//     };
-//     document.getElementById("aboutlink").onclick = function () {
-//         show(aboutPage);
-//         hide(h2pPage, home, playerList, gamePage, endPage);
-//     };
-// }
 
 // BUTTONS EVENTS
 
@@ -85,20 +59,14 @@ enterBtn.addEventListener("click", function () {
 );
 
 truthBtn.addEventListener("click", function () {
-  gamePage.hidden = false;
-  playerList.hidden = true;
-  home.hidden = true;
-  dareBtn.hidden = true;
-  truthBtn.hidden = true;
+  setUpElements()
+  setUpQuestion("truth")
 }, false
 );
 
 dareBtn.addEventListener("click", function () {
-  gamePage.hidden = false;
-  playerList.hidden = true;
-  home.hidden = true;
-  dareBtn.hidden = true;
-  truthBtn.hidden = true;
+  setUpElements()
+  setUpQuestion("dare")
 }, false
 );
 
@@ -126,16 +94,37 @@ restartBtn.addEventListener("click", function() {
 }, false
 );
 
+// SET UP HIDDEN ELEMENTS WHEN TRUTH OR DARE IS CLICKED
+function setUpElements() {
+  gamePage.hidden = false;
+  playerList.hidden = true;
+  home.hidden = true;
+  dareBtn.hidden = true;
+  truthBtn.hidden = true;
+}
 
+// SET UP THE QUESTION DEPENDING ON TRUTH OR DARE CHOICE
+function pickRandom(arr) {
+  return arr[Math.floor(Math.random() * arr.length)];
+}
 
-// DISPLAY QUESTIONS
+function setUpQuestion(choice) {
+  playerName.innerHTML = pickRandom(listPlayers);
 
-// function displayQ () {
-//     truthBtn.onclick = function() {
-
-// }
-//     }
-// }
+  if (choice === "truth") {
+    questionArea.innerHTML = truthQuestions[truthStep].question;
+    truthStep++
+    if (truthStep === truthQuestions.length) {
+      truthStep = 0;
+    }
+  } else {
+    questionArea.innerHTML = dareQuestions[dareStep].question;
+    dareStep++ 
+    if (dareStep === dareQuestions.length) {
+      dareStep = 0;
+    }
+  }
+}
 
 // PLAYER LIST SETUP
 
@@ -190,6 +179,12 @@ window.onkeydown = (evt) => {
   if (evt.keyCode === 13) addPlayer(); // only if user press the "enter" key
   // 13 is a convention in the DOM API => represents the enter key (each key has an associated number)
 };
+
+
+// DISPLAY QUESTIONS
+
+
+
 
 // ================
 // - EVENTS
