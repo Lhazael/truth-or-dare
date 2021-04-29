@@ -4,9 +4,22 @@
   padding: 0;
 }
 
+@font-face {
+
+  font-family: "Zealot";
+  src: url("./font/ZealotCollege-8v9g.ttf") format("truetype");
+ }
+@font-face {
+  font-family: "Squirk";
+  src: url("./font/Squirk-RMvV.ttf") format("truetype");
+}
+
 h1 {
+  font-family: 'Zealot';
   font-size: 80px;
   font-weight: bold;
+  text-align: center;
+  margin: 30px;
 }
 
 h2 {
@@ -26,6 +39,7 @@ body {
 
 header {
   display: flex;
+  font-family: 'Squirk' ;
   font-size: x-large;
   font-weight: 800;
   background-color: white;
@@ -60,12 +74,36 @@ li a {
   color: black;
 }
 
-#start-btn {
-    border-style: 3px solid;
-    text-align: center;
-    margin: 10px;
-    padding: 10px;
+.home-main {
+  align-items: center;
 }
+
+#start-btn {
+  background-image: linear-gradient(
+    to right,
+    #200122 0%,
+    #6f0000 51%,
+    #200122 100%
+  );
+  margin: 10px;
+  padding: 15px 45px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  box-shadow: 0 0 20px #eee;
+  border-radius: 10px;
+  display:block;
+}
+
+
+#start-btn:hover {
+  background-position: right center; /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
+}
+
 /* 
 footer {
   display: flex;

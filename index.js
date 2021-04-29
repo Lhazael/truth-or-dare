@@ -181,20 +181,3 @@ window.onkeydown = (evt) => {
 };
 
 
-// DISPLAY QUESTIONS
-
-
-
-
-// ================
-// - EVENTS
-// ================
-
-// truthBtn.addEventListener('click', displayQ);
-// dareBtn.addEventListener('click', displayQ);
-
-// button.addEventListener('click', () => {
-//     checkButton();
-// });
-
-// btn.addEventListener("click", "got to next page");
