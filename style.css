@@ -19,7 +19,7 @@
 
 h1 {
   font-family: 'Zealot';
-  font-size: 200px;
+  font-size: 150px;
   font-weight: bold;
   text-align: center;
   margin: 30px;
@@ -79,35 +79,46 @@ li a {
   color: black;
 }
 
-.home-main {
-  align-items: center;
-}
-
 #start-btn {
-  background-image: linear-gradient(
-    to right,
-    #200122 0%,
-    #6f0000 51%,
-    #200122 100%
-  );
-  margin: 10px;
-  padding: 15px 45px;
+  background-color: #D7F7AA; 
+  display: block;
+  border-radius: 4px;
+  border: none;
+  color: black;
   text-align: center;
-  text-transform: uppercase;
+  font-size: 28px;
+  padding: 20px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: auto;
+}
+
+#start-btn span {
+  cursor: pointer;
+  display: block;
+  position: relative;
   transition: 0.5s;
-  background-size: 200% auto;
-  color: white;
-  box-shadow: 0 0 20px #eee;
-  border-radius: 10px;
-  display:block;
 }
 
-
-#start-btn:hover {
-  background-position: right center; /* change the direction of the change here */
-  color: #fff;
-  text-decoration: none;
+#start-btn span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
 }
+
+#start-btn:hover span {
+  padding-right: 25px;
+}
+
+#start-btn:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
 
 /* 
 footer {
