@@ -82,6 +82,11 @@ header .nav-bar {
   float: right;
 }
 
+.site-name a {
+  text-decoration: none;
+  color: black;
+}
+
 li a {
   display: block;
   text-align: center;
@@ -132,7 +137,7 @@ li a {
   right: 0;
 }
 
-#playerPage, #gameplay {
+#playerPage, #gameplay, .about, .how {
     margin: 10% auto;
     width: 400px; 
     text-align: center;
@@ -192,6 +197,20 @@ li a {
   font-size: 30px;
   text-align: center;
   margin: 5% auto;
+}
+
+.about ul, .how ul {
+  margin-top: 10%;
+  list-style-type: none;
+  text-decoration: none;
+  font-family: 'Gotham-Light';
+  font-size: 25px;
+}
+
+.how p{
+  font-family: 'Gotham-Light';
+  font-size: x-large;
+  margin-top: 15%;
 }
 
 footer {
