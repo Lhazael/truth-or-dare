@@ -95,7 +95,7 @@ li a {
   color: black;
 }
 
-#start-btn, #enter-btn, #next-btn {
+#start-btn, #enter-btn, .choiceQ {
   background-color: #D7F7AA; 
   display: block;
   border-radius: 4px;
@@ -112,14 +112,14 @@ li a {
   margin: auto;
 }
 
-#start-btn span, #enter-btn span, #next-btn span {
+#start-btn span, #enter-btn span {
   cursor: pointer;
   display: block;
   position: relative;
   transition: 0.5s;
 }
 
-#start-btn span:after, #enter-btn span:after, #next-btn span:after {
+#start-btn span:after, #enter-btn span:after {
   content: '\00bb';
   position: absolute;
   opacity: 0;
@@ -128,11 +128,11 @@ li a {
   transition: 0.5s;
 }
 
-#start-btn:hover span, #enter-btn:hover span, #next-btn:hover {
+#start-btn:hover span, #enter-btn:hover span, .choiceQ:hover {
   padding-right: 25px;
 }
 
-#start-btn:hover span:after, #enter-btn:hover span:after, #next-btn:hover span:after {
+#start-btn:hover span:after, #enter-btn:hover span:after {
   opacity: 1;
   right: 0;
 }
@@ -187,9 +187,9 @@ li a {
 
 #gameplay .choiceQ, #gameplay .replay {
   margin: 2% auto;
-  width: 100px; 
+  width: 120px; 
   display: inline-block;
-  vertical-align: top;
+  vertical-align:middle;
 }
 
 #gameplay #question-zone p {
@@ -197,6 +197,10 @@ li a {
   font-size: 30px;
   text-align: center;
   margin: 5% auto;
+}
+
+.choiceQ {
+  margin: 10% 2%;
 }
 
 .about ul, .how ul {

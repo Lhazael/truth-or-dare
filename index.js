@@ -70,14 +70,14 @@ dareBtn.addEventListener("click", function () {
 }, false
 );
 
-nextBtn.addEventListener("click", function () {
-  gamePage.hidden = false;
-  playerList.hidden = true;
-  home.hidden = true;
-  dareBtn.hidden = false;
-  truthBtn.hidden = false;
-}, false
-);
+// nextBtn.addEventListener("click", function () {
+//   gamePage.hidden = false;
+//   playerList.hidden = true;
+//   home.hidden = true;
+//   dareBtn.hidden = false;
+//   truthBtn.hidden = false;
+// }, false
+// );
 
 endBtn.addEventListener("click", function() {
     endPage.hidden = false;
@@ -103,6 +103,14 @@ function setUpElements() {
   truthBtn.hidden = true;
 }
 
+var nombreClics = 0;
+
+function comptage() {
+  nombreClics++;
+  document.getElementById("count").textContent=nombreClics;
+}
+
+
 // SET UP THE QUESTION DEPENDING ON TRUTH OR DARE CHOICE
 function pickRandom(arr) {
   return arr[Math.floor(Math.random() * arr.length)];
@@ -125,6 +133,7 @@ function setUpQuestion(choice) {
     }
   }
 }
+
 
 // PLAYER LIST SETUP
 
@@ -180,6 +189,6 @@ window.onkeydown = (evt) => {
   // 13 is a convention in the DOM API => represents the enter key (each key has an associated number)
 };
 
-
+document.getElementsById("truth-btn").addEventListener("click", comptage);
 
 
