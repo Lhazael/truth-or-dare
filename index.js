@@ -161,7 +161,7 @@ function addPlayer() {
   listPlayers.push(playerString); // insert the current todo in the state
 
   li.innerHTML = `
-    <span class="text">${playerString}</span>
+    <span class="text"><i class="fas fa-star"></i>  ${playerString}</span>
     <button class="btn">delete</button>`;
 
   // create a clickable button :)
