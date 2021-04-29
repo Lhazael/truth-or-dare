@@ -55,12 +55,12 @@
     <section id="playerPage" hidden>
       <h2>Enter player's name</h2>
       <input type="text" id="player-input" placeholder="Add a name" />
-      <button id="add-btn">Add</button>
+      <button id="add-btn" hidden>Add</button>
       <!-- <p>Modify previous code to add a delete button on each todo !</p> -->
       <ul id="player-list">
-        <li> No player</li>
+        <li>No player</li>
       </ul>
-      <button id="enter-btn">Enter Game</button>
+      <button id="enter-btn"><span>Enter Game</span></button>
     </section>
 
     <!-- GAME PAGE --> 
@@ -75,8 +75,8 @@
           <h3></h3>
           <p></p>
         </div>
-        <button id="end-btn">End Game</button>
-        <button id="restart-btn">Restart Game</button>
+        <button id="end-btn" class="replay">End Game</button>
+        <button id="restart-btn" class="replay">Restart Game</button>
     </section>
 
     <!-- ENDGAME PAGE --> 

@@ -162,7 +162,7 @@ function addPlayer() {
 
   li.innerHTML = `
     <span class="text"><i class="fas fa-star"></i>  ${playerString}</span>
-    <button class="btn">delete</button>`;
+    <button class="btn">Delete</button>`;
 
   // create a clickable button :)
   const btn = li.querySelector(".btn");
@@ -179,5 +179,7 @@ window.onkeydown = (evt) => {
   if (evt.keyCode === 13) addPlayer(); // only if user press the "enter" key
   // 13 is a convention in the DOM API => represents the enter key (each key has an associated number)
 };
+
+
 
 
