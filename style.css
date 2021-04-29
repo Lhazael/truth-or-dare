@@ -29,6 +29,14 @@ h2, h3 {
   font-family: 'Gotham';
 }
 
+h2 {
+  font-size: 35px;
+}
+
+h3 {
+  font-size: 25px;
+}
+
 body {
   height: auto;
   background: rgb(251, 186, 88);
@@ -163,6 +171,8 @@ li a {
   padding: 1%;
   text-align: center;
 }
+
+
 /* 
 footer {
   display: flex;
