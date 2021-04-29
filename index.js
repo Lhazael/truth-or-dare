@@ -31,7 +31,7 @@ const listPlayers = [];
 let truthStep = 0;
 let dareStep = 0;
 
-const playerName = document.querySelector("#question-zone h3");
+const playerName = document.querySelector("#question-zone h2");
 const questionArea = document.querySelector("#question-zone p");
 
 

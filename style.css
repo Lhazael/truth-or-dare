@@ -16,10 +16,14 @@
   font-family: "Gotham";
   src: url("./font/Gotham-Bold.otf") format("opentype");
 }
+@font-face {
+  font-family: "Gotham-light";
+  src: url("./font/Gotham-Light.otf") format("opentype");
+}
 
 h1 {
   font-family: 'Zealot';
-  font-size: 150px;
+  font-size: 140px;
   font-weight: bold;
   text-align: center;
   margin: 30px;
@@ -86,7 +90,7 @@ li a {
   color: black;
 }
 
-#start-btn, #enter-btn {
+#start-btn, #enter-btn, #next-btn {
   background-color: #D7F7AA; 
   display: block;
   border-radius: 4px;
@@ -103,14 +107,14 @@ li a {
   margin: auto;
 }
 
-#start-btn span, #enter-btn span {
+#start-btn span, #enter-btn span, #next-btn span {
   cursor: pointer;
   display: block;
   position: relative;
   transition: 0.5s;
 }
 
-#start-btn span:after, #enter-btn span:after {
+#start-btn span:after, #enter-btn span:after, #next-btn span:after {
   content: '\00bb';
   position: absolute;
   opacity: 0;
@@ -119,16 +123,16 @@ li a {
   transition: 0.5s;
 }
 
-#start-btn:hover span, #enter-btn:hover span {
+#start-btn:hover span, #enter-btn:hover span, #next-btn:hover {
   padding-right: 25px;
 }
 
-#start-btn:hover span:after, #enter-btn:hover span:after {
+#start-btn:hover span:after, #enter-btn:hover span:after, #next-btn:hover span:after {
   opacity: 1;
   right: 0;
 }
 
-#playerPage {
+#playerPage, #gameplay {
     margin: 10% auto;
     width: 400px; 
     text-align: center;
@@ -172,17 +176,38 @@ li a {
   text-align: center;
 }
 
-
-/* 
-footer {
-  display: flex;
-  text-align: center;s
-  background-color: white;
-  border-top: 2px solid black;
+#gameplay hidden{
+  display: inline-block;
 }
 
-footer .copyright {
+#gameplay .choiceQ, #gameplay .replay {
+  margin: 2% auto;
+  width: 100px; 
+  display: inline-block;
+  vertical-align: top;
+}
+
+#gameplay #question-zone p {
+  font-family: 'Gotham-Light';
+  font-size: 30px;
+  text-align: center;
+  margin: 5% auto;
+}
+
+footer {
+  display: flex;
+  text-align: center;
+  background-color: #fbf2d9;
+  border-top: 2px solid black;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+}
+
+footer p {
+  font-family: 'Gotham';
+  font-size: 15px;
   float: center;
   flex: auto;
-  margin: 3rem;
-} */
+  margin: 1rem;
+}

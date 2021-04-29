@@ -9,48 +9,48 @@
     <script type="module" src="index.js"></script>
     <script type="module" src="./data/dare.js"></script>
     <script type="module" src="./data/truth.js"></script>
-    <script src="https://kit.fontawesome.com/f49af0b71b.js" crossorigin="anonymous"></script>
+    <script
+      src="https://kit.fontawesome.com/f49af0b71b.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
 
-   <!-- HEADER -->
+  <!-- HEADER -->
 
   <header>
     <div class="site-name">
       <h3>the infamous game</h3>
     </div>
 
-    <!-- NAV BAR --> 
+    <!-- NAV BAR -->
 
     <nav class="nav-bar">
       <ul>
-        <li><a id="homelink" href="#"> Home </a></li>
-        <li><a id="h2plink" href="#"> How to Play</a></li>
-        <li><a id="aboutlink" href="#"> About </a></li>
+        <li><a id="homelink" href="#homepage"> Home </a></li>
+        <li><a id="h2plink" href="#how2play"> How to Play</a></li>
+        <li><a id="aboutlink" href="#aboutPage"> About </a></li>
       </ul>
     </nav>
   </header>
   <body>
-
     <!-- HOMEPAGE -->
 
     <section id="homepage" class="home-main">
-      <h1 class="title">TRUTH<br>OR<br>DARE</h1>
+      <h1 class="title">TRUTH<br />OR<br />DARE</h1>
       <button id="start-btn"><span>START </span></button>
     </section>
 
-    <!-- ABOUT PAGE --> 
-    
-    <section id="aboutPage" class="hidden">
+    <!-- ABOUT PAGE -->
+
+    <section id="aboutPage" class="hidden"> <!-- Do a new html page -->
     </section>
 
-    <!-- HOW2PLAY PAGE --> 
+    <!-- HOW2PLAY PAGE -->
 
     <section id="how2play" class="hidden">
-      <h2></h2>
-      <p></p>
     </section>
 
-    <!-- PLAYER PAGE --> 
+    <!-- PLAYER PAGE -->
 
     <section id="playerPage" hidden>
       <h2>Enter player's name</h2>
@@ -63,29 +63,27 @@
       <button id="enter-btn"><span>Enter Game</span></button>
     </section>
 
-    <!-- GAME PAGE --> 
+    <!-- GAME PAGE -->
 
     <section id="gameplay" hidden>
-        <button id="truth-btn">Truth</button>
-        
-        <button id="dare-btn">Dare</button>
-        
-        <button id="next-btn">Next</button>
-        <div id="question-zone">
-          <h3></h3>
-          <p></p>
-        </div>
-        <button id="end-btn" class="replay">End Game</button>
-        <button id="restart-btn" class="replay">Restart Game</button>
+      <div id="question-zone">
+        <h2></h2>
+        <p></p>
+      </div>
+      <button id="truth-btn" class="choiceQ">Truth</button>
+      <button id="dare-btn" class="choiceQ">Dare</button>
+      <button id="next-btn" class="next"><span></span>Next</span></button>
+      <button id="end-btn" class="replay">End Game</button>
+      <button id="restart-btn" class="replay">Restart Game</button>
     </section>
 
-    <!-- ENDGAME PAGE --> 
+    <!-- ENDGAME PAGE -->
 
     <section id="endgame" hidden>
-        <p>GAME IS OVER!</p>
+      <h1>GAME<br>IS<br>OVER!</h1>
     </section>
   </body>
-  <!-- <footer> -->
-  <!-- <p class="copyright">c 2021 LH corporation</p> -->
-  <!-- </footer> -->
+  <footer>
+  <p><span>&#169;</span> 2021 LH corporation</p>
+  </footer>
 </html>
