@@ -6,12 +6,9 @@
 
 @font-face {
   font-family: "Zealot";
-  src: url("./font/ZealotCollege-8v9g.ttf") format("truetype");
+  src: url("./font/ZealotOutline-rnMy.ttf") format("truetype");
  }
-/* @font-face {
-  font-family: "Squirk";
-  src: url("./font/Squirk-RMvV.ttf") format("truetype");
-} */
+
 @font-face {
   font-family: "Gotham";
   src: url("./font/Gotham-Bold.otf") format("opentype");

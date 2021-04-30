@@ -103,11 +103,12 @@ function setUpElements() {
   truthBtn.hidden = true;
 }
 
-var nombreClics = 0;
+let nombreClics = 0;
 
 function comptage() {
   nombreClics++;
   document.getElementById("count").textContent=nombreClics;
+  article.innerHTML =`<article><span id="count">${nombreClics}</span></article>`;
 }
 
 
@@ -189,6 +190,6 @@ window.onkeydown = (evt) => {
   // 13 is a convention in the DOM API => represents the enter key (each key has an associated number)
 };
 
-document.getElementsById("truth-btn").addEventListener("click", comptage);
+// document.getElementsById("truth-btn").addEventListener("click", comptage);
 
 
