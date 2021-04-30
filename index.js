@@ -27,6 +27,7 @@ const list = document.getElementById("player-list");
 const input = document.getElementById("player-input");
 
 // GAME VARIABLES
+
 const listPlayers = [];
 let truthStep = 0;
 let dareStep = 0;
@@ -70,6 +71,8 @@ dareBtn.addEventListener("click", function () {
 }, false
 );
 
+// Wanted to use this button but found out I don't need it (for the moment)
+
 // nextBtn.addEventListener("click", function () {
 //   gamePage.hidden = false;
 //   playerList.hidden = true;
@@ -95,6 +98,7 @@ restartBtn.addEventListener("click", function() {
 );
 
 // SET UP HIDDEN ELEMENTS WHEN TRUTH OR DARE IS CLICKED
+
 function setUpElements() {
   gamePage.hidden = false;
   playerList.hidden = true;
@@ -111,8 +115,8 @@ function comptage() {
   article.innerHTML =`<article><span id="count">${nombreClics}</span></article>`;
 }
 
-
 // SET UP THE QUESTION DEPENDING ON TRUTH OR DARE CHOICE
+
 function pickRandom(arr) {
   return arr[Math.floor(Math.random() * arr.length)];
 }
@@ -135,16 +139,15 @@ function setUpQuestion(choice) {
   }
 }
 
-
 // PLAYER LIST SETUP
 
-const resetList = () => (list.innerHTML = ""); // empty the list
-const setNoPlayer = () => (list.innerHTML = "<li>No player</li>");
+const resetList = () => (list.innerHTML = ""); // to empty the list
+const setNoPlayer = () => (list.innerHTML = "<li>No player</li>"); // when list is empty
 
 function deletePlayer(evt) {
-  const clickedBtn = evt.target; // this is the clicked button
-  const parent = clickedBtn.parentElement; // let's access the li (the parent of clickedButton)
-  const text = parent.querySelector(".text").textContent; // get the todo text in the span
+  const clickedBtn = evt.target; 
+  const parent = clickedBtn.parentElement;
+  const text = parent.querySelector(".text").textContent; 
   const indexPlayer = listPlayers.indexOf(text);
 
   listPlayers.splice(indexPlayer, 1);
@@ -154,42 +157,36 @@ function deletePlayer(evt) {
 }
 
 function addPlayer() {
-  const playerString = input.value; // access the current input value
+  const playerString = input.value;
 
   if (playerString === "") return alert("Insert a player name");
 
   if (listPlayers.indexOf(playerString) !== -1)
     return alert("Name already entered");
 
-  // no name ? let's remove the initial <li>No player...</li>
   if (listPlayers.length === 0) resetList();
 
-  // modify the list HTML with a new li
   const li = document.createElement("li");
-  // use the input value as text content for the new li +
 
-  listPlayers.push(playerString); // insert the current todo in the state
+  listPlayers.push(playerString); 
 
   li.innerHTML = `
     <span class="text"><i class="fas fa-star"></i>  ${playerString}</span>
     <button class="btn">Delete</button>`;
 
-  // create a clickable button :)
+  // CLICKABLE BUTTON
+  
   const btn = li.querySelector(".btn");
   btn.addEventListener("click", deletePlayer);
 
-  list.appendChild(li); // insert the li in the document
+  list.appendChild(li);
   input.value = "";
   input.focus();
 }
 
 addBtn.addEventListener("click", addPlayer);
 window.onkeydown = (evt) => {
-  // console.log(evt.keyCode);
-  if (evt.keyCode === 13) addPlayer(); // only if user press the "enter" key
-  // 13 is a convention in the DOM API => represents the enter key (each key has an associated number)
+  if (evt.keyCode === 13) addPlayer(); // if user press the "enter" key
 };
-
-// document.getElementsById("truth-btn").addEventListener("click", comptage);
 
 
