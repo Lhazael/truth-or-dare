@@ -1,2 +1,2 @@
 # truth-or-dare
-Week 3 personal project
+1st project - Iron Hack WDFT April 2021
